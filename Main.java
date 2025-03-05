@@ -8,10 +8,9 @@ public class Main {
         int resultado = 0;
         char continuar;
         char continuarResultado = 'n';
-        int valor1 = 0;
-        int valor2 = 0;
+        int valor1 = 0, valor2 = 0;
         do {
-            if(continuarResultado == 'n'|| continuarResultado == 'N') {
+            if (continuarResultado == 'n' || continuarResultado == 'N') {
                 System.out.println("primeiro numero");
                 valor1 = teclado.nextInt();
                 teclado.nextLine();
@@ -20,40 +19,42 @@ public class Main {
             }
             System.out.println("Selecione o operador: (+, -, *, /)");
             String operador = teclado.nextLine();
-            
+
             System.out.println("Segundo numero");
             valor2 = teclado.nextInt();
-            
+
             switch (operador) {
                 case "+":
-                resultado = valor1 + valor2;
-                System.out.println(resultado);
-                break;
+                    resultado = valor1 + valor2;
+                    System.out.println(resultado);
+                    break;
                 case "-":
-                resultado = valor1 - valor2;
-                System.out.println(resultado);
-                break;
+                    resultado = valor1 - valor2;
+                    System.out.println(resultado);
+                    break;
                 case "*":
-                resultado = valor1 * valor2;
-                System.out.println(resultado);
-                break;
+                    resultado = valor1 * valor2;
+                    System.out.println(resultado);
+                    break;
                 case "/":
-                resultado = valor1 / valor2;
-                if(valor2 == 0){
+                if (valor2 == 0) {
                     System.out.println("Nao divisivel por zero");
                 }
-                System.out.println(resultado);
-                break;
+                resultado = valor1 / valor2;
+                    System.out.println(resultado);
+                    break;
+                    default:
+                    System.out.println("Operador invalido!");
             }
             System.out.println("Deseja continuar? S/N");
             continuar = teclado.next().charAt(0);
             teclado.nextLine();
-            
+
             System.out.println("Deseja manter o mesmo resultado? S/N");
             continuarResultado = teclado.next().charAt(0);
             teclado.nextLine();
 
-        } while (continuar == 's' || continuar =='S');
+        } while (continuar == 's' || continuar == 'S');
         teclado.close();
     }
 }
