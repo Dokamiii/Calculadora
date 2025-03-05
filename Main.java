@@ -33,6 +33,9 @@ public class Main {
                     break;
                 case "/":
                     resultado = valor1 / valor2;
+                    if(valor2 == 0){
+                        System.out.println("Nao divisivel por zero");
+                    }
                     System.out.println(resultado);
                     break;
             }
